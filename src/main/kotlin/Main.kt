@@ -8,9 +8,10 @@ fun main(){
     val x:Float = 4F
     println(x)
     print("Input a number so I can tell you if it is even: ")
-    val y = readln().toInt()
-    val isEven = y%2 == 0
-    println("Even is (true/false): $isEven")
+    //Safe - works
+    val y = readln().toIntOrNull()?.inc()
+    val isEven = y?.rem(2) == 0
+    println("Even? $isEven")
 }
 
 fun var_decider(){
