@@ -7,6 +7,7 @@ fun main(){
      * intArrayOf. Ako probas da printujes samo ime niza, dobices adresu na kojoj je pocetak niza
      * Elementima niza se pristupa normalno, nista cudno. Ako probas index koji je preko velicine niza:
      * ArrayIndexOutOfBoundsException. Velicina niza se dobija koristeci niz.size
+     * Ovo je staticka alokacija niza - ovaj niz se NE MOZE DINAMICKI RESIZE-OVATI, iako mozes promeniti njegove elemente
      */
     val numbers = intArrayOf(5,17,69,420,13)
     println("This array starts at address: $numbers")
@@ -25,6 +26,18 @@ fun main(){
         }
     println("The result you got is: $getFromArray")
 
-
+    /**
+     * Petlje - postoje klasicne for i while. While sintaksa je normalna - nista specijalno. Postoje kljucne reci
+     * break i continue - znas koja sta radi
+     */
+    println("Enter numbers to sum, if you want to stop enter -1")
+    var input2 = 0
+    var sum = 0
+    while(input2!=-1){
+        input2 = readln().toIntOrNull()?:0
+        sum+=input2
+        println("Current sum is: $sum")
+    }
+    println("Total sum is: $sum")
 
 }
