@@ -31,10 +31,15 @@ fun main(){
      * break i continue - znas koja sta radi
      */
     println("Enter numbers to sum, if you want to stop enter -1")
-    var input2 = 0
+    var input2: Int? = 0
     var sum = 0
-    while(input2!=-1){
-        input2 = readln().toIntOrNull()?:0
+    while(true){
+        input2 = readln().toIntOrNull()
+        if(input2==null){
+            println("This is not a number, please enter a number")
+            continue
+        }
+        if(input2==-1) break;
         sum+=input2
         println("Current sum is: $sum")
     }
