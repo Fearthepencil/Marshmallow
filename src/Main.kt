@@ -1,3 +1,5 @@
+import java.text.NumberFormat
+
 fun main() {
     /**
      * Postoji type inferencija - Kotlin sam zakljucuje koji je tip podataka dodeljen promenljivoj
@@ -49,4 +51,43 @@ fun main() {
     val z: Int? = readln().toIntOrNull()?.inc()
     val isEvenZ = z?.rem(2)
     println("The variable incremented is: $z and it is now even: $isEvenZ")
+
+    /**
+     * If-ovi rade standardno, ali mogu i da se upakuju u dodele promenljivama
+     */
+    var ifs =
+        if(isEven){
+            "even"
+        }
+        else {
+            "odd"
+        }
+
+    /**
+     * Umesto clunky else if strukture - mozemo da koristimo when(switch)
+     * U slucaju da je vise uslova u when ispunjeno - nema propadanja - uzima se prva vrednost koja je ispunila uslov
+     */
+    ifs = when(isEven){
+        true -> "even"
+        else -> "odd"
+    }
+    println("The first number you entered was: $isEven")
+
+    /**
+     * Exceptions - try/catch isto mozes da upakujes u dodelu promenljivoj sto je dosta zanimljivo
+     * Mozes i sam da bacis expection sa throw
+     */
+    val tried =
+        try{
+            println("Enter an int now")
+            readln().toIntOrNull()?.inc()
+        } catch (e: NumberFormatException){
+            println("You did not enter an int - ${e.message}")
+        } finally {
+            //Something that should definitely be executed
+        }
+    println("You entered $tried")
+
+
+
 }
