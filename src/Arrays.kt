@@ -31,18 +31,36 @@ fun main(){
      * break i continue - znas koja sta radi
      */
     println("Enter numbers to sum, if you want to stop enter -1")
-    var input2: Int? = 0
     var sum = 0
     while(true){
-        input2 = readln().toIntOrNull()
+        val input2 = readln().toIntOrNull()
         if(input2==null){
             println("This is not a number, please enter a number")
             continue
         }
-        if(input2==-1) break;
+        if(input2==-1) break
         sum+=input2
         println("Current sum is: $sum")
     }
     println("Total sum is: $sum")
+
+    /**
+     * Dinamicki nizovi - Mutable Lists. Definisu se kao array isto, samo moras da dodas tip - mutableListOf<DataType>().
+     * Liste mogu da se printuju kao println("Lista: $list")
+     */
+    println("Napravi svoj niz, mozes kolko oces elemenata")
+    val niz = mutableListOf<Int>()
+    while(true){
+        println("Unesi novi element, -1 ako zelis da prestanes")
+        val number = readln().toIntOrNull()
+        when(number){
+            null -> { println("Nisi uneo int, los korisnik, popravi!")
+                    continue }
+            -1 -> { println("Kraj unosa")
+                    break }
+            else -> niz.add(number)
+        }
+    }
+    println("Vasa lista je $niz")
 
 }
