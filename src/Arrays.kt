@@ -63,4 +63,21 @@ fun main(){
     }
     println("Vasa lista je $niz")
 
+    /**
+     * For petlje - recimo hoces da povecas svaki broj u ovoj listi za 1
+     * Definicija je klasicna, obicno se koristi i in x .. y ako zelis range ili i in x until y.
+     * Foreach petlja se definise kao element in list i onda lepo ides kroz elemente, klasika
+     */
+    for (i in 0 until niz.size){
+        niz[i]++
+        println("Element $i je povecan")
+    }
+
+    println("Novi elementi liste su:")
+    for (element in niz){
+        println(element)
+    }
+
+
+
 }
