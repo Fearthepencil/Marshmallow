@@ -27,8 +27,8 @@ fun main(){
     println("The result you got is: $getFromArray")
 
     /**
-     * Petlje - postoje klasicne for i while. While sintaksa je normalna - nista specijalno. Postoje kljucne reci
-     * break i continue - znas koja sta radi
+     * Petlje - postoje klasicne for i while. While sintaksa je normalna - nista specijalno.
+     * Postoje kljucne reci break i continue - znas koja sta radi
      */
     println("Enter numbers to sum, if you want to stop enter -1")
     var sum = 0
@@ -78,6 +78,35 @@ fun main(){
         println(element)
     }
 
+    /**
+     * Stringovi su takodje Iterable nizovi, ide se karakter po karakter,
+     * takodje mozes da pristupis stringu u specificnom index-u, kao nizu i da uzmes taj element
+     */
+    println("Enter a string as an array")
+    val inputStr = readln()
 
+    for(character in inputStr){
+        println(character)
+    }
+
+    /**
+     * Kotlin daje lak nacin da se kreces kroz stvari i naopako, koristeci downTo
+     * i lastIndex
+     */
+    println("String reversed")
+    for(i in inputStr.lastIndex downTo 0){
+        println(inputStr[i])
+    }
+
+    /**
+     * Da dinamicki napravis stringove mozes da koristis buildString
+     * i da ovako isprintujes svoj string naopako takodje
+     */
+    val reverseStr = buildString{
+        for(i in inputStr.lastIndex downTo 0){
+            append(inputStr[i])
+        }
+    }
+    println(reverseStr)
 
 }

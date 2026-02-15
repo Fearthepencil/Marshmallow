@@ -4,7 +4,7 @@ fun main() {
     /**
      * Postoji type inferencija - Kotlin sam zakljucuje koji je tip podataka dodeljen promenljivoj
      * Mozes eksplicitno da deklarises tip
-     * VAL - pseudo konstante su read-only ali su RUNTIME initialized (nisu prave konstante)
+     * VAL - pseudo konstante koje su read-only ali su RUNTIME initialized (nisu prave konstante)
      */
     val y: Float = 5f
 
@@ -40,7 +40,7 @@ fun main() {
     println("Enter a variable to see if it is even")
     val x: Int = readln().toIntOrNull()?:0
     val isEven = x%2==0
-    println("The variable you is even: $isEven")
+    println("The variable you entered is even: $isEven")
 
     /**
      * Kotlin f-je imaju NULL-SAFE pozive - f-je ce se pozvati nad vrednoscu SAMO AKO NIJE NULL
