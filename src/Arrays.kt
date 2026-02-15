@@ -109,6 +109,5 @@ fun main(){
         println("This string is a palindrome!")
     }
     else println("This string is not a palindrome")
-    println("Back to normal ${reverseStr().extensionReverse()}")
-
+    println("Back to normal ${reverseStr.extensionReverse()}")
 }
