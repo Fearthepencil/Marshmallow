@@ -101,12 +101,13 @@ fun main(){
     /**
      * Da dinamicki napravis stringove mozes da koristis buildString
      * i da ovako isprintujes svoj string naopako takodje
+     * Kad zoves f-je, pametno je da kazes imeParametraUF-ji=vrednostKojuMuProsledjujes
+     * Ovako znas sta ti je sta u f-ji
      */
-    val reverseStr = buildString{
-        for(i in inputStr.lastIndex downTo 0){
-            append(inputStr[i])
-        }
+    val reverseStr = reverseStr(string=inputStr)
+    if(reverseStr==inputStr){
+        println("This string is a palindrome!")
     }
-    println(reverseStr)
+    else println("This string is not a palindrome")
 
 }
