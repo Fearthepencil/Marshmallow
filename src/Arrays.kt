@@ -19,9 +19,9 @@ fun main(){
      * Mozes da iskoristis index in/ !in array.indices da proveris da li je index u nizu
      */
     val getFromArray =
-        when {
-            input == null -> "you have not entered an int"
-            input !in numbers.indices -> {"array index $input out of bounds - size is ${numbers.size}"}
+        when (input) {
+            null -> "you have not entered an int"
+            !in numbers.indices -> {"array index $input out of bounds - size is ${numbers.size}"}
             else -> numbers[input]
         }
     println("The result you got is: $getFromArray")
@@ -110,4 +110,14 @@ fun main(){
     }
     else println("This string is not a palindrome")
     println("Back to normal ${reverseStr.extensionReverse()}")
+    println("Try to enter an index to reverse from: ")
+    val index = readln().toInt()
+    println("String is: ${reverseStr.extensionReverse(startingIndex = index)}")
+    println("String with no numbers is: ${filterLetters(input=reverseStr)}")
+    println("String with no numbers is: ${reverseStr.customFilter { it.isDigit() }}")
+    /**
+     * Kad zoves f-ju na ovaj nacin ne moras da koristis it, jer lambda f-ja implicitno koristi char nad
+     * kojim je pozivas u ovoj vecoj f-ji.
+     */
+    println("String with no numbers is: ${reverseStr.customFilterExtension { isDigit() }}")
 }
